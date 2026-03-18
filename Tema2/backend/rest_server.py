@@ -6,7 +6,9 @@ PORT = 8182
 AUTHORS_FILE = "authors.json"
 BOOKS_FILE = "books.json"
 
+# =========================
 # Persistence helpers
+# =========================
 def load_data(filename):
     if not os.path.exists(filename):
         return []
@@ -20,7 +22,9 @@ def save_data(filename, data):
 authors = load_data(AUTHORS_FILE)
 books = load_data(BOOKS_FILE)
 
+# =========================
 # REST Handler
+# =========================
 class SimpleRESTHandler(BaseHTTPRequestHandler):
 
     def send_json(self, code, data):
@@ -35,7 +39,9 @@ class SimpleRESTHandler(BaseHTTPRequestHandler):
         body = self.rfile.read(content_length)
         return json.loads(body)
 
+    # -------------------------
     # GET
+    # -------------------------
     def do_GET(self):
         global authors, books
         if self.path == "/authors":
@@ -67,16 +73,24 @@ class SimpleRESTHandler(BaseHTTPRequestHandler):
         else:
             self.send_json(404, {"error":"Not found"})
 
+    # -------------------------
     # POST
+    # -------------------------
     def do_POST(self):
         global authors, books
         if self.path == "/authors":
             data = self.parse_body()
             new_id = 1 if not authors else authors[-1]["id"] + 1
-            author = {"id": new_id, "name": data["name"], "birthYear": data["birthYear"]}
+            author = {
+                "id": new_id,
+                "name": data["name"],
+                "birthYear": data["birthYear"],
+                "city": data.get("city", "Unknown")
+            }
             authors.append(author)
             save_data(AUTHORS_FILE, authors)
             self.send_json(201, author)
+
         elif self.path == "/books":
             data = self.parse_body()
             if not any(a["id"] == data["authorId"] for a in authors):
