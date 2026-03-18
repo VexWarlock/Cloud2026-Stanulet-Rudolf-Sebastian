@@ -1,79 +1,67 @@
 {
   "info": {
-    "_postman_id": "e6f3f3b8-1d5a-4a77-bf31-3a2a4f94d2b1",
-    "name": "LibraryFullStack",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "_postman_id": "baf04b0e-e9ba-4bb2-a50e-80be20cc9d6a",
+    "name": "TemaCloud1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52874141",
+    "_collection_link": "https://go.postman.co/collection/52874141-baf04b0e-e9ba-4bb2-a50e-80be20cc9d6a?source=collection_link"
   },
   "item": [
-    {
-      "name": "Get Full Library",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:5000/library",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "5000",
-          "path": ["library"]
-        }
-      }
-    },
     {
       "name": "Post Author",
       "request": {
         "method": "POST",
-        "header": [
-          { "key": "Content-Type", "value": "application/json" }
-        ],
+        "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{ \"name\": \"Haruki Murakami\", \"birthYear\": 1949, \"city\": \"Tokyo\" }",
-          "options": { "raw": { "language": "json" } }
+          "raw": "{ \"name\": \"George Orwell\", \"birthYear\": 1903 , \"city\": \"London\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
         },
         "url": {
           "raw": "http://localhost:8182/authors",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "8182",
-          "path": ["authors"]
+          "path": [
+            "authors"
+          ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "Post Book",
       "request": {
         "method": "POST",
-        "header": [
-          { "key": "Content-Type", "value": "application/json" }
-        ],
+        "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{ \"title\": \"Kafka on the Shore\", \"authorId\": 1, \"year\": 2002 }",
-          "options": { "raw": { "language": "json" } }
+          "raw": "{\r\n  \"title\": \"1984\",\r\n  \"authorId\": 1,\r\n  \"year\": 1949\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
         },
         "url": {
           "raw": "http://localhost:8182/books",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "8182",
-          "path": ["books"]
+          "path": [
+            "books"
+          ]
         }
-      }
-    },
-    {
-      "name": "Get Authors",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:8182/authors",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "8182",
-          "path": ["authors"]
-        }
-      }
+      },
+      "response": []
     },
     {
       "name": "Get Books",
@@ -83,25 +71,35 @@
         "url": {
           "raw": "http://localhost:8182/books",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "8182",
-          "path": ["books"]
+          "path": [
+            "books"
+          ]
         }
-      }
+      },
+      "response": []
     },
     {
-      "name": "Get Author by ID",
+      "name": "Get Author",
       "request": {
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:8182/authors/1",
+          "raw": "http://localhost:8182/authors",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "8182",
-          "path": ["authors","1"]
+          "path": [
+            "authors"
+          ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "Get Book by ID",
@@ -111,53 +109,95 @@
         "url": {
           "raw": "http://localhost:8182/books/1",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "8182",
-          "path": ["books","1"]
+          "path": [
+            "books",
+            "1"
+          ]
         }
-      }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Author by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8182/authors/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8182",
+          "path": [
+            "authors",
+            "1"
+          ]
+        }
+      },
+      "response": []
     },
     {
       "name": "Put Author",
       "request": {
         "method": "PUT",
-        "header": [
-          { "key": "Content-Type", "value": "application/json" }
-        ],
+        "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{ \"name\": \"Haruki Murakami Updated\", \"birthYear\": 1949, \"city\": \"Tokyo\" }",
-          "options": { "raw": { "language": "json" } }
+          "raw": "{ \"name\": \"Nume actualizat\", \"birthYear\": 1990 , \"city\": \"London\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
         },
         "url": {
           "raw": "http://localhost:8182/authors/1",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "8182",
-          "path": ["authors","1"]
+          "path": [
+            "authors",
+            "1"
+          ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "Put Book",
       "request": {
         "method": "PUT",
-        "header": [
-          { "key": "Content-Type", "value": "application/json" }
-        ],
+        "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{ \"title\": \"Kafka on the Shore Updated\", \"authorId\": 1, \"year\": 2003 }",
-          "options": { "raw": { "language": "json" } }
+          "raw": "{ \"title\": \"Updated Book\", \"authorId\": 1, \"year\": 2020 }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
         },
         "url": {
           "raw": "http://localhost:8182/books/1",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "8182",
-          "path": ["books","1"]
+          "path": [
+            "books",
+            "1"
+          ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "Delete Author",
@@ -167,11 +207,17 @@
         "url": {
           "raw": "http://localhost:8182/authors/1",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "8182",
-          "path": ["authors","1"]
+          "path": [
+            "authors",
+            "1"
+          ]
         }
-      }
+      },
+      "response": []
     },
     {
       "name": "Delete Book",
@@ -181,11 +227,87 @@
         "url": {
           "raw": "http://localhost:8182/books/1",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "8182",
-          "path": ["books","1"]
+          "path": [
+            "books",
+            "1"
+          ]
         }
-      }
+      },
+      "response": []
+    },
+    {
+      "name": "Post Author 2",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"name\": \"Haruki Murakami\", \"birthYear\": 1949 , \"city\": \"Tokyo\" }"
+        },
+        "url": {
+          "raw": "http://localhost:8182/authors",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8182",
+          "path": [
+            "authors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post Book 2",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Kafka on the Shore\",\r\n  \"authorId\":2,\r\n  \"year\": 2002\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8182/books",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8182",
+          "path": [
+            "books"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
     }
   ]
 }
